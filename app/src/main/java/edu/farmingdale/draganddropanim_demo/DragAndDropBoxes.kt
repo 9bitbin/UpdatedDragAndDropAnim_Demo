@@ -113,7 +113,7 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
                         Text(
                             text = "Right", // Text content
                             fontSize = 40.sp,
-                            color = Color.Red,
+                            color = Color.Blue,
                             fontWeight = FontWeight.Bold,
 
                             modifier = Modifier
