@@ -1,5 +1,10 @@
 @file:OptIn(ExperimentalFoundationApi::class)
-
+/**
+ * Name: Himal Shrestha
+ * Course: BCS 371 - Mobile Appliation Development
+ * Prof: Alrajab
+ * Week 12
+ */
 package edu.farmingdale.draganddropanim_demo
 
 import android.content.ClipData
