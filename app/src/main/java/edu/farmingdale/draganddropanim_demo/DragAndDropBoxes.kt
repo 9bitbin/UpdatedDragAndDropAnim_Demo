@@ -158,3 +158,33 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
                 repeatMode = RepeatMode.Restart // Restart after each iteration
             )
         )
+        // Box containing the draggable icon and reset button
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.8f)
+                .background(Color.Red) // Background color
+        ) {
+            // Draggable icon with rotation
+            Icon(
+                imageVector = Icons.Default.Face, // Face icon
+                contentDescription = "Face", // Content description for accessibility
+                modifier = Modifier
+                    .padding(10.dp)
+                    .offset(isOffset.x.dp, isOffset.y.dp) // Offset position
+                    .rotate(rtatView) // Apply rotation animation
+            )
+
+            // Reset button to re-center the draggable object
+            Button(
+                onClick = {
+                    isOffset = IntOffset(445, 150) // Reset position
+                    isPlaying = false // Stop animation
+                },
+                modifier = Modifier.align(Alignment.BottomCenter).padding(16.dp) // Button alignment and padding
+            ) {
+                Text("Reset Smiley") // Button label
+            }
+        }
+    }
+}
