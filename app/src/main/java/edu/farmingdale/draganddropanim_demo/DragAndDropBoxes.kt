@@ -137,3 +137,24 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
                 }
             }
         }
+        // Animated offset for draggable object based on state
+        val pOffset by animateIntOffsetAsState(
+            targetValue = when (isPlaying) {
+                true -> when (direction) {
+                    "up" -> IntOffset(130, 100) // Move up if direction is "up"
+                    else -> IntOffset(130, 300) // Default position
+                }
+                false -> IntOffset(130, 300) // Default position when not playing
+            },
+            animationSpec = tween(3000, easing = LinearEasing) // Animation specifications
+        )
+
+        // Rotation animation for the draggable object
+        val rtatView by animateFloatAsState(
+            targetValue = if (isPlaying) 360f else 0.0f, // Rotate fully if playing
+            animationSpec = repeatable(
+                iterations = if (isPlaying) 10 else 1, // Repeat rotation 10 times if playing
+                tween(durationMillis = 3000, easing = LinearEasing), // Duration and easing
+                repeatMode = RepeatMode.Restart // Restart after each iteration
+            )
+        )
