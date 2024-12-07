@@ -1,7 +1,7 @@
 @file:OptIn(ExperimentalFoundationApi::class)
 /**
  * Name: Himal Shrestha
- * Course: BCS 371 - Mobile Appliation Development
+ * Course: BCS 371 - Mobile Application Development
  * Prof: Alrajab
  * Week 12
  */
@@ -182,7 +182,7 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
                     .offset(isOffset.x.dp, isOffset.y.dp) // Offset position
                     .rotate(rtatView) // Apply rotation animation
                     .size(75.dp) // Set size for the smiley face
-                    
+
             )
 
             // Reset button to re-center the draggable object
