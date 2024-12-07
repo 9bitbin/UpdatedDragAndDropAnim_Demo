@@ -34,8 +34,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -53,6 +55,7 @@ import androidx.compose.ui.draganddrop.DragAndDropTransferData
 import androidx.compose.ui.draganddrop.mimeTypes
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -168,16 +171,18 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(0.8f)
-                .background(Color.Red) // Background color
+                .background(Color.Magenta) // Background color
         ) {
             // Draggable icon with rotation
             Icon(
-                imageVector = Icons.Default.Face, // Face icon
+                imageVector = Icons.Default.Favorite, // Face icon
                 contentDescription = "Face", // Content description for accessibility
                 modifier = Modifier
                     .padding(10.dp)
                     .offset(isOffset.x.dp, isOffset.y.dp) // Offset position
                     .rotate(rtatView) // Apply rotation animation
+                    .size(75.dp) // Set size for the smiley face
+                    
             )
 
             // Reset button to re-center the draggable object
